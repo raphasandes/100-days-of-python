@@ -22,9 +22,24 @@ Este repositório documenta minha evolução, desde os fundamentos até projetos
 ## 🚀 Progresso
 
 | Dia | Conteúdo | Status |
-|------|----------|--------|
-| 01 | Fundamentos e variáveis | ⏳ Em documentação |
-| 02 | Condicionais | ⏳ Em documentação |
-| 03 | Listas | ⏳ Em documentação |
-| 04 | Revisão | ⏳ Em documentação |
+|---:|---|:---:|
+| 01 | Fundamentos e variáveis | ✅ |
+| 02 | Estruturas condicionais | ✅ |
+| 03 | Listas, índices e `len()` | ✅ |
+| 04 | Revisão dos fundamentos | ✅ |
 | 05 | Laços de repetição (`for`) | ✅ |
+| 06 | Prova 1 — Fundamentos | ✅ |
+
+# Arquivos desta aula
+
+| Arquivo | Descrição |
+|---------|-----------|
+| exercicio.py | Código desenvolvido durante a aula. |
+| README.md | Documentação técnica da aula. |
+| reflexao.md | Reflexão pessoal sobre o aprendizado. |
+
+## 🏆 Avaliações
+
+| Avaliação | Conteúdos | Resultado |
+|---|---|---:|
+| Prova 1 | Variáveis, condicionais, listas, índices, `len()`, `for` e `range()` | 9,25 / 10,00 |
