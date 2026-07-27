@@ -1,7 +1,7 @@
 nomes = [
     "Raphael",
-    "Lucas",
-    "Ana"
+    "Dani",
+    "Nayara"
 ]
 
 for nome in nomes:

@@ -618,3 +618,135 @@ git push
 - [ ] Revisar o fluxo de execução do `for`.
 - [ ] Revisar acesso a elementos com índices.
 - [ ] Repetir o fluxo básico do Git sem consulta.
+
+# Dia 07 — Funções
+
+## O que eu ainda não sabia ontem
+
+- O que era uma função em Python.
+- A diferença entre definir e executar uma função.
+- Que uma função pode ser chamada várias vezes.
+- Que funções podem chamar outras funções.
+- Para que servem os parâmetros.
+- Como as funções ajudam na organização de um programa.
+
+## O que sei fazer hoje
+
+- Criar funções utilizando `def`.
+- Chamar uma função pelo nome.
+- Prever a ordem de execução de um programa com funções.
+- Reutilizar funções em diferentes partes do código.
+- Criar funções responsáveis por tarefas específicas.
+- Utilizar uma função dentro de outra função.
+- Criar uma função que recebe uma informação por parâmetro.
+- Organizar um programa em blocos menores e mais claros.
+- Identificar repetições que podem ser transformadas em funções.
+
+## Conceito principal
+
+Definir uma função não significa executá-la.
+
+```python
+def saudacao():
+    print("Olá!")
+```
+
+O código dentro da função somente será executado quando ela for chamada:
+
+```python
+saudacao()
+```
+
+## Ordem de execução
+
+O Python executa o programa de cima para baixo.
+
+Quando encontra uma função criada com `def`, ele registra essa função, mas ainda não executa seu conteúdo.
+
+```python
+def mensagem():
+    print("Bom dia!")
+
+
+print("Início")
+mensagem()
+print("Fim")
+```
+
+A saída será:
+
+```text
+Início
+Bom dia!
+Fim
+```
+
+## Reutilização de código
+
+Uma função pode ser utilizada várias vezes no mesmo programa.
+
+```python
+def linha():
+    print("========================")
+
+
+linha()
+print("RELATÓRIO")
+linha()
+```
+
+A principal vantagem das funções não é necessariamente utilizar menos memória, mas tornar o código:
+
+- mais organizado;
+- mais legível;
+- mais reutilizável;
+- mais fácil de corrigir;
+- mais fácil de atualizar.
+
+Caso o formato da linha precise ser alterado, basta modificar uma única parte do programa.
+
+## Funções chamando outras funções
+
+Uma função pode executar outra função.
+
+```python
+def linha():
+    print("========================")
+
+
+def titulo(texto):
+    linha()
+    print(texto)
+    linha()
+```
+
+Quando `titulo()` é chamada, ela também executa `linha()`.
+
+## Introdução aos parâmetros
+
+Um parâmetro permite que uma função receba informações.
+
+```python
+def titulo(texto):
+    print(texto)
+```
+
+Ao chamar a função, enviamos um valor:
+
+```python
+titulo("RELATÓRIO DE VENDAS")
+```
+
+A mensagem `"RELATÓRIO DE VENDAS"` é recebida pelo parâmetro `texto`.
+
+## Aplicação prática
+
+Desenvolvi um gerador de relatórios utilizando funções para:
+
+- criar linhas de separação;
+- gerar títulos;
+- apresentar diferentes relatórios;
+- evitar repetição de código;
+- organizar responsabilidades.
+
+Também compreendi que a principal vantagem das funções não é necessariamente reduzir o uso de memória, mas melhorar a organização, a reutilização e a manutenção do programa.
