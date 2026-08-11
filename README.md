@@ -29,6 +29,9 @@ Este repositório documenta minha evolução, desde os fundamentos até projetos
 | 04 | Revisão dos fundamentos | ✅ |
 | 05 | Laços de repetição (`for`) | ✅ |
 | 06 | Prova 1 — Fundamentos | ✅ |
+| 07 | Revisão e retomada dos fundamentos | ✅ |
+| 08 | Reforço — Funções e estruturas de repetição | ⏳ |
+
 
 # Arquivos desta aula
 
