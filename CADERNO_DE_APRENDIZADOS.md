@@ -750,3 +750,162 @@ Desenvolvi um gerador de relatórios utilizando funções para:
 - organizar responsabilidades.
 
 Também compreendi que a principal vantagem das funções não é necessariamente reduzir o uso de memória, mas melhorar a organização, a reutilização e a manutenção do programa.
+
+
+---
+
+# Dia 09 — Consolidação de Funções, Listas e Índices
+
+## O que ainda precisava ser consolidado
+
+Ao iniciar esta aula, os conceitos de funções, listas, `for`, `range()` e `len()` já haviam sido estudados, mas ainda havia dificuldade em compreender como todos eles se conectavam dentro de um mesmo programa.
+
+Os principais pontos que precisavam de reforço eram:
+
+- diferenciar uma lista de um parâmetro;
+- diferenciar um índice do valor armazenado na lista;
+- compreender exatamente o papel da variável utilizada no `for`;
+- distinguir `len()` de `range()`;
+- acompanhar o caminho de um valor da lista até o parâmetro de uma função;
+- construir sozinho um programa combinando todos esses elementos.
+
+## O que sei fazer hoje
+
+Ao final da Aula 09, consigo:
+
+- identificar uma lista;
+- identificar um parâmetro;
+- utilizar índices para acessar elementos de uma lista;
+- compreender que os índices começam em `0`;
+- utilizar `len()` para descobrir a quantidade de elementos de uma lista;
+- utilizar `range()` para produzir a sequência de números percorrida pelo `for`;
+- utilizar a variável do `for` como índice;
+- acessar elementos correspondentes de duas listas;
+- enviar valores encontrados nas listas como argumentos para uma função;
+- compreender como os parâmetros recebem esses valores;
+- construir um programa completo combinando funções, listas, `for`, `range()`, `len()` e índices.
+
+## Conceito principal
+
+Um dos principais aprendizados da aula foi compreender a diferença entre o índice e o valor encontrado.
+
+```text
+indice → diz ONDE procurar
+parâmetro → recebe O QUE foi encontrado
+```
+
+Exemplo:
+
+```python
+funcionarios = ["Marcos", "Fernanda", "João", "Beatriz"]
+salarios = [3200, 4500, 3800, 5100]
+
+def mostrar_funcionario(funcionario, salario):
+    print("Funcionário:", funcionario)
+    print("Salário:", salario)
+
+for indice in range(len(funcionarios)):
+    mostrar_funcionario(funcionarios[indice], salarios[indice])
+```
+
+Quando:
+
+```text
+indice = 2
+```
+
+temos:
+
+```text
+funcionarios[2] → "João"
+salarios[2] → 3800
+```
+
+A chamada da função equivale a:
+
+```python
+mostrar_funcionario("João", 3800)
+```
+
+E os parâmetros recebem:
+
+```text
+funcionario → "João"
+salario → 3800
+```
+
+## len() e range()
+
+Também ficou mais clara a diferença entre `len()` e `range()`.
+
+```text
+len() → informa QUANTOS elementos existem
+range() → produz os números que serão percorridos
+```
+
+Por exemplo, para uma lista com cinco elementos:
+
+```text
+len(lista) → 5
+range(5) → 0, 1, 2, 3, 4
+```
+
+A variável do `for` recebe esses números um por vez.
+
+## Fluxo consolidado
+
+O funcionamento completo pode ser visualizado assim:
+
+```text
+lista
+↓
+len()
+↓
+quantidade de elementos
+↓
+range()
+↓
+sequência de índices
+↓
+variável do for
+↓
+acesso aos elementos das listas
+↓
+argumentos
+↓
+parâmetros
+↓
+execução da função
+```
+
+## Evolução
+
+Durante a aula, passei de exercícios guiados para a construção autônoma de um programa utilizando duas listas relacionadas, uma função com dois parâmetros e uma estrutura de repetição.
+
+O desafio final foi construído utilizando:
+
+```python
+produtos = ["SmartPOS", "Tap to Phone", "Link de Pagamento", "Pix no POS"]
+quantidade = [185, 92, 143, 76]
+
+def consolidacao(produto, cliente):
+    print("Produto:", produto)
+    print("Clientes ativos:", cliente)
+
+for indice in range(len(produtos)):
+    consolidacao(produtos[indice], quantidade[indice])
+```
+
+A lógica de combinação entre funções, listas e estruturas de repetição está mais consolidada.
+
+Os erros que ainda apareceram estiveram principalmente relacionados à sintaxe e ao vocabulário técnico, e não mais à estrutura lógica principal.
+
+## Próximo passo
+
+Na próxima aula, avançar para novos conteúdos, mantendo pequenas revisões de:
+
+- funções e parâmetros;
+- `len()` e `range()`;
+- índices;
+- passagem de argumentos;
+- leitura do fluxo completo de execução.
