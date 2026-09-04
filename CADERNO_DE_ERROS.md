@@ -428,3 +428,262 @@ Principalmente:
 > `produto` é um parâmetro da função.
 
 > `indice` recebe os números produzidos pelo `range()` e pode ser utilizado para acessar posições das listas.
+
+# Dia 11 — Erros e Aprendizados
+
+## Erro 1 — Confundir índice com parâmetro
+
+### Confusão
+
+Durante um exercício, foi considerado que os parâmetros da função receberiam:
+
+```text
+0, 1 e 2
+```
+
+Esses valores, porém, pertenciam ao índice utilizado pelo `for`.
+
+### Aprendizado
+
+O índice é utilizado para acessar um elemento da lista.
+
+Exemplo:
+
+```python
+indice = 1
+
+produtos[indice]
+```
+
+equivale a:
+
+```python
+produtos[1]
+```
+
+Se:
+
+```python
+produtos = ["SmartPOS", "Tap to Phone", "Link de Pagamento"]
+```
+
+então:
+
+```python
+produtos[1]
+```
+
+retorna:
+
+```text
+"Tap to Phone"
+```
+
+É `"Tap to Phone"`, e não `1`, que será enviado para o parâmetro correspondente da função.
+
+---
+
+## Erro 2 — String sem aspas
+
+### Tentativa
+
+```python
+apresentar(Marina, 28)
+```
+
+### Problema
+
+`Marina` é um texto e precisa ser representado como uma `string`.
+
+### Correção
+
+```python
+apresentar("Marina", 28)
+```
+
+### Aprendizado
+
+Valores de texto escritos diretamente no código precisam estar entre aspas.
+
+---
+
+## Erro 3 — Utilizar nomes diferentes para a mesma variável
+
+### Tentativa
+
+```python
+def conclusao_projetos(projeto, responsavel, conclusoes):
+    print("Conclusão:", conclusao)
+```
+
+### Problema
+
+O parâmetro foi criado como:
+
+```python
+conclusoes
+```
+
+mas o `print()` tentou acessar:
+
+```python
+conclusao
+```
+
+São identificadores diferentes.
+
+### Correção
+
+```python
+def conclusao_projetos(projeto, responsavel, conclusao):
+    print("Conclusão:", conclusao)
+```
+
+### Aprendizado
+
+O nome utilizado para acessar um parâmetro precisa ser o mesmo definido na função.
+
+---
+
+## Erro 4 — Utilizar o nome de outra lista
+
+### Tentativa
+
+```python
+for indice in range(len(projetos)):
+    conclusao_projetos(
+        produtos[indice],
+        responsaveis[indice],
+        conclusoes[indice]
+    )
+```
+
+### Problema
+
+A lista existente se chamava:
+
+```python
+projetos
+```
+
+mas foi utilizado:
+
+```python
+produtos
+```
+
+### Correção
+
+```python
+for indice in range(len(projetos)):
+    conclusao_projetos(
+        projetos[indice],
+        responsaveis[indice],
+        conclusoes[indice]
+    )
+```
+
+### Aprendizado
+
+É necessário manter consistência nos nomes das variáveis durante todo o programa.
+
+---
+
+## Erro 5 — Acentos em nomes de variáveis
+
+### Exemplo
+
+```python
+conclusão = ["80%", "60%", "90%"]
+```
+
+Python aceita caracteres Unicode em identificadores, portanto esse nome pode funcionar.
+
+Entretanto, por convenção e para evitar inconsistências durante a escrita do código, é preferível utilizar:
+
+```python
+conclusao = ["80%", "60%", "90%"]
+```
+
+### Aprendizado
+
+Sempre que possível, utilizar nomes simples, claros e sem acentos:
+
+```python
+responsaveis
+conclusoes
+salarios
+```
+
+---
+
+# Principal aprendizado da aula
+
+O caminho trabalhado foi:
+
+```text
+lista
+  ↓
+índice
+  ↓
+lista[indice]
+  ↓
+valor
+  ↓
+argumento
+  ↓
+parâmetro
+  ↓
+execução da função
+```
+
+Exemplo:
+
+```python
+indice = 1
+```
+
+leva a:
+
+```python
+projetos[indice]
+```
+
+que pode retornar:
+
+```text
+"Tap to Phone"
+```
+
+Esse valor é utilizado na chamada:
+
+```python
+mostrar_projeto("Tap to Phone")
+```
+
+e então recebido pelo parâmetro:
+
+```python
+def mostrar_projeto(projeto):
+```
+
+Portanto:
+
+```text
+indice = 1
+
+não significa:
+
+projeto = 1
+```
+
+O índice localiza o valor na lista:
+
+```text
+indice = 1
+      ↓
+projetos[1]
+      ↓
+"Tap to Phone"
+      ↓
+projeto = "Tap to Phone"
